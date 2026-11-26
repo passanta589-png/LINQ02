@@ -12,7 +12,9 @@ namespace LINQ02
                .Take(3);
 
             //Q02
-
+            var pages = Source.ProductList
+               .Skip(5)
+               .Take(5);
 
 
 
