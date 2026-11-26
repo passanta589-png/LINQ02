@@ -104,7 +104,8 @@ namespace LINQ02
             //Q16
             var firstOver50 = Source.ProductList.First(p => p.UnitPrice > 50);
 
-
+            //Q17
+            var firstOver500OrNull = Source.ProductList.FirstOrDefault(p => p.UnitPrice > 500);
         }
     }
 }
