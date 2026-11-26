@@ -1,4 +1,5 @@
 ﻿using LINQ02.DataSources;
+using LINQ02.Models;
 
 namespace LINQ02
 {
@@ -85,6 +86,25 @@ namespace LINQ02
             //Q13
             int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
             int[] setB = { 3, 6, 9, 12, 15, 13 };
+
+            //Q14
+            string[] list1 = { "Germany", "France", "UK", "Spain" };
+            string[] list2 = { "france", "SPAIN", "Italy" };
+
+            var onlyInList1 = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+
+            //Q15
+            Dictionary<int, Product> productsById = Source.ProductList.ToDictionary(p => p.ProductID);
+
+            if (productsById.TryGetValue(18, out Product? product18))
+            {
+                Console.WriteLine(product18.ProductName);
+            }
+
+            //Q16
+            var firstOver50 = Source.ProductList.First(p => p.UnitPrice > 50);
+
+
         }
     }
 }
