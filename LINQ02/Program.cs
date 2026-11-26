@@ -106,6 +106,11 @@ namespace LINQ02
 
             //Q17
             var firstOver500OrNull = Source.ProductList.FirstOrDefault(p => p.UnitPrice > 500);
+
+            //Q19
+            var evenNumbers = Enumerable.Range(1, 30)
+               .Where(n => n % 2 == 0);
+
         }
     }
 }
