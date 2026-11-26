@@ -76,6 +76,11 @@ namespace LINQ02
             //Q11
             var minPrice = Source.ProductList.Min(p => p.UnitPrice);
             var maxPrice = Source.ProductList.Max(p => p.UnitPrice);
+
+            //Q12
+            var dis = Source.ProductList
+            .Select(p => p.Category)
+            .Distinct();
         }
     }
 }
