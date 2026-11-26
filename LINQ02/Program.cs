@@ -16,6 +16,11 @@ namespace LINQ02
                .Skip(5)
                .Take(5);
 
+            //Q03
+            var Under25 = Source.ProductList
+            .OrderBy(p => p.UnitPrice)
+            .TakeWhile(p => p.UnitPrice < 25);
+
 
 
         }
