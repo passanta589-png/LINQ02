@@ -111,6 +111,22 @@ namespace LINQ02
             var evenNumbers = Enumerable.Range(1, 30)
                .Where(n => n % 2 == 0);
 
+            //Q20
+            var combinedNames = Source.ProductList
+                .Take(3)
+                .Select(p => p.ProductName)
+                .Concat(
+                     Source.CustomerList
+                     .Take(3)
+                     .Select(c => c.CustomerName)
+                 );
+
+            //Q21
+            var salesPairs = Source.ProductList.Zip(
+              Source.CustomerList,
+              (p, c) => $"{p.ProductName} sold to {c.CustomerName}"
+              );
+
         }
     }
 }
