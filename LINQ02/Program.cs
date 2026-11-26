@@ -38,6 +38,20 @@ namespace LINQ02
                 Console.WriteLine($"{group.Key} has {group.Count()} products");
             }
 
+            //Q07
+            var prodactName = Source.ProductList
+             .GroupBy(
+             p => p.Category,
+             p => p.ProductName
+             );
+            foreach (var group in prodactName)
+            {
+                Console.WriteLine($"{group.Key}");
+                foreach (var name in group)
+                {
+                    Console.WriteLine(name);
+                }
+            }
 
 
 
