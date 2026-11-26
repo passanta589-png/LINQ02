@@ -70,6 +70,8 @@ namespace LINQ02
                TotalOrderValue = g.Sum(cust => cust.Orders.Sum(o => o.Total))
            };
 
+            //Q10
+            int totalUnitsInStock = Source.ProductList.Sum(p => p.UnitsInStock);
         }
     }
 }
