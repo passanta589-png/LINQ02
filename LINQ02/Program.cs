@@ -21,6 +21,11 @@ namespace LINQ02
             .OrderBy(p => p.UnitPrice)
             .TakeWhile(p => p.UnitPrice < 25);
 
+            //Q04
+            var allseafoodinStock = Source.ProductList
+              .Where(p => p.Category == "Seafood")
+              .All(p => p.UnitsInStock > 0);
+
 
 
         }
