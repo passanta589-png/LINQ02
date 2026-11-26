@@ -26,6 +26,13 @@ namespace LINQ02
               .Where(p => p.Category == "Seafood")
               .All(p => p.UnitsInStock > 0);
 
+            //Q05
+            int[] ids = { 3, 9, 13, 18 };
+            var contains = ids.Contains(9);
+
+            //Q06
+
+
 
 
         }
