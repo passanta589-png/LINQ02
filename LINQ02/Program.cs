@@ -59,7 +59,16 @@ namespace LINQ02
               .Where(g => g.Count() > 3)
               .Select(g => g.Key);
 
-
+            //Q09
+            var customerStatsByCountry =
+           from c in Source.CustomerList
+           group c by c.Country into g
+           select new
+           {
+               Country = g.Key,
+               Count = g.Count(),
+               TotalOrderValue = g.Sum(cust => cust.Orders.Sum(o => o.Total))
+           };
 
         }
     }
