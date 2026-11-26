@@ -31,6 +31,12 @@ namespace LINQ02
             var contains = ids.Contains(9);
 
             //Q06
+            var count = Source.ProductList
+                      .GroupBy(p => p.Category);
+            foreach (var group in count)
+            {
+                Console.WriteLine($"{group.Key} has {group.Count()} products");
+            }
 
 
 
